@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Conversor de Moedas</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Conversor de Moedas</h1>
+        </header>
+        <main>
+            <label>
+                Converter <b>de</b>
+                <select>
+                    <option>R$ Real brasileiro</option>   
+                </select>
+            </label>
+            <label>
+                Converter <b>para</b>
+                <select id="currency-select" onchange="atualizarImagemMoeda()">
+                    <option value="">Selecione...</option>
+                    <option value="USD">US$ Dolar americano</option>
+                    <option value="EUR">€ Euro</option>
+                    <option value="ARS">$ Peso argentino</option>
+                    <option value="CLP">$ Peso chileno</option>
+                    <option value="INR">₹ Rupia indiana</option>
+                    <option value="JPY">¥ Iene japonês</option>
+                    <option value="PYG">₲ Guarani paraguaio</option>
+                </select>
+            </label>
+            <label>
+                Valor
+                <input type="number" name="value-real" max="1000000"
+                id="value-real" placeholder="R$ 20,00">
+            </label>
+
+            <button type="submit" onclick="converterMoeda()">Converter</button>
+
+
+            <section>
+                <div class="currency-container">
+                    <img src="./assets/brasil.png" alt="bandeira do brasil">
+                    <p class="currency-name">Real</p>
+                    <p class="currency-value" id="real-value-text">R$ 0,00</p>
+                </div>
+
+                <img class="arrow-img" src="./assets/Vector.png" alt="seta para baixo">
+
+                <div class="currency-container">
+                    <img src="./assets/estados-unidos.png" id="currency-img" alt="bandeira dos estados-unidos">
+                    <p class="currency-name" id="currency-name">Dolar americano</p>
+                    <p class="currency-value" id="currency-value-text">US$ 0,00</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+    <script src="./script.js"></script>
+</html>
